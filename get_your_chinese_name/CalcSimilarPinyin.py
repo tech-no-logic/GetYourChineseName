@@ -11,11 +11,11 @@ def CalcSimPinyin(pinyin):
         SeparateVowelAndConsonant(pinyin)
     print(initConsonant + '  ' + initVowel)
 
-    VowelXLS = xlrd.open_workbook('resources\韵母模糊表达表2.xls');  # 打开韵母模糊表达表
+    VowelXLS = xlrd.open_workbook('..\\resources\\韵母模糊表达表2.xls');  # 打开韵母模糊表达表
     VowelTable = VowelXLS.sheets()[0]  # 打开sheet1
     nVowelCols = VowelTable.ncols  # 获取列数
 
-    consonantXLS = xlrd.open_workbook('resources\声母模糊表达表1.xls');  # 打开声母模糊表达表
+    consonantXLS = xlrd.open_workbook('..\\resources\\声母模糊表达表1.xls');  # 打开声母模糊表达表
     consonantTable = consonantXLS.sheets()[0]  # 打开sheet1
     nConsonCols = consonantTable.ncols  # 获取列数
     sumDiff=0

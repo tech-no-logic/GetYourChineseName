@@ -8,7 +8,7 @@ def Calc2VowelDiff(vowel1,vowel2):
     :param vowel2: string，vowel2
     :return: diff: int, difference of vowel1 and vowel2
     '''
-    VowelXLS = xlrd.open_workbook('resources\韵母模糊表达表2.xls');  # 打开韵母模糊表达表
+    VowelXLS = xlrd.open_workbook('..\\resources\\韵母模糊表达表2.xls');  # 打开韵母模糊表达表
     VowelTable = VowelXLS.sheets()[0]  # 打开sheet1
     nRows = VowelTable.nrows  # 获取行数
     nCols = VowelTable.ncols  # 获取列数

@@ -8,7 +8,7 @@ def Calc2ConsonantDiff(consonant1,consonant2):
     :param consonant2: string，consonant2
     :return: diff: int, difference of consonant1 and consonant2
     '''
-    consonantXLS = xlrd.open_workbook('resources\声母模糊表达表1.xls');  # 打开声母模糊表达表
+    consonantXLS = xlrd.open_workbook('..\\resources\\声母模糊表达表1.xls');  # 打开声母模糊表达表
     consonantTable = consonantXLS.sheets()[0]  # 打开sheet1
     nRows = consonantTable.nrows  # 获取行数
     nCols = consonantTable.ncols  # 获取列数
