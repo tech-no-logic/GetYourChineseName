@@ -73,7 +73,7 @@ if __name__ == "__main__":
     socket.setdefaulttimeout(timeout)
     sleep_download_time = 2
     i = 0
-    f0 = open('a2.txt', 'r')
+    f0 = open('..\\resources\\a2.txt', 'r')
 
     for line in f0:
         for ch in line:
@@ -92,7 +92,7 @@ if __name__ == "__main__":
                     web_page.close()
 
                     soup = BeautifulSoup(contentBytes, 'html.parser')
-                    f1 = open('a3.txt', 'a')
+                    f1 = open('..\\resources\\a3.txt', 'a')
                     lis = []
                     fl = 0
                     for cs in soup.body.find_all('span')[2].find_all('b'):

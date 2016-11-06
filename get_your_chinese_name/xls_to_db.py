@@ -4,6 +4,21 @@ import xlrd
 import sqlite3
 
 
+def is_table_exist(connect, table_name):
+    """
+
+    :param connect:
+    :param table_name:
+    :return:
+    """
+    cursor = connect.execute(
+        u'SELECT COUNT(*) FROM sqlite_master WHERE  type=\'table\' AND name=\'{0:s}\''.format(table_name))
+    for row in cursor:
+        if row[0] == 0:
+            return False
+    return True
+
+
 def convert_xls_to_db(xls_name, factor_name):
     """
     to convert a comparing table
@@ -17,11 +32,7 @@ def convert_xls_to_db(xls_name, factor_name):
     n_cols = consonant_table.ncols  # 获取列数
 
     connection = sqlite3.connect('..\\resources\\database.db')
-    cursor = connection.execute(
-        u'SELECT COUNT(*) FROM sqlite_master WHERE  type=\'table\' AND name=\'{0:s}\''.format(xls_name))
-
-    for row in cursor:
-        if row[0] == 0:
+    if is_table_exist(connection,xls_name) is False:
             connection.execute(u'CREATE TABLE {0:s}\
                                 (ID INT PRIMARY KEY   NOT NULL,\
                                 {1:s}1 CHAR(5),\
@@ -82,10 +93,7 @@ def convert_xls_to_db_2(xls_name, factor_name1, factor_name2):
     n_rows = consonant_table.nrows  # 获取行数
 
     connection = sqlite3.connect('..\\resources\\database.db')
-    cursor = connection.execute(
-        u'SELECT COUNT(*) FROM sqlite_master WHERE  type=\'table\' AND name=\'{0:s}\''.format(xls_name))
-    for row in cursor:
-        if row[0] == 0:
+    if is_table_exist(connection,xls_name):
             connection.execute(u'CREATE TABLE {0:s}(ID INT PRIMARY KEY   NOT NULL,\
                                 {1:s} CHAR(10),\
                                 {2:s} CHAR(10))'.format(xls_name, factor_name1, factor_name2))
