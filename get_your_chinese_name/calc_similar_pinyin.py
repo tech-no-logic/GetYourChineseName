@@ -11,7 +11,7 @@ def calc_sim_pinyin(input_pinyin):
     similar_pinyin=[]
     init_consonant, init_vowel = separate_vowel_consonant. \
         separate_vowel_and_consonant(input_pinyin)
-    print(init_consonant + '  ' + init_vowel)
+#    print(init_consonant + '  ' + init_vowel)
 
     vowel_xls = xlrd.open_workbook('..\\resources\\韵母模糊表达表2.xls')  # 打开韵母模糊表达表
     vowel_table = vowel_xls.sheets()[0]  # 打开sheet1
