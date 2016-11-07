@@ -106,8 +106,7 @@ def pinyin_to_chinese(pinyin):
             chinese_chars.append(each_chinese[0])
     return chinese_chars
 
-if __name__ == "__main__":
-    english_name=input('please input English name:')
+def turn_eng_name_to_chinese(english_name):
     chinese=english_name_to_common_chinese(english_name)
     for chars in chinese:
         print(chars)
@@ -122,5 +121,8 @@ if __name__ == "__main__":
                 for each_similar_pinyin in similar_pinyin:
                     print(each_similar_pinyin)
                     similar_pinyin_chars=pinyin_to_chinese(each_similar_pinyin)
-                    for each_similar_pinyin_char in similar_pinyin_chars:
-                        print(each_similar_pinyin_char)
+                    print(similar_pinyin_chars)
+ #                   for each_similar_pinyin_char in similar_pinyin_chars:
+ #                       print(each_similar_pinyin_char)
+    return
+
