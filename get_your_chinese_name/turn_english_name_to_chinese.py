@@ -125,4 +125,3 @@ def turn_eng_name_to_chinese(english_name):
  #                   for each_similar_pinyin_char in similar_pinyin_chars:
  #                       print(each_similar_pinyin_char)
     return
-
